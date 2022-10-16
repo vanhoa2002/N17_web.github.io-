@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xe số</title>
+    <link rel="shortcut icon" href="./assets/image/icon/icon.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous">
+    </script>
+
+    <!-- script cho search box -->
+    <script src="./assets/script/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-box">
+
+            <!-- navigation bar -->
+            <ul class="nav-bar__list">
+                <li class="nav-bar__item">
+                    <a class="nav-bar__item-link" href="index.html">TRANG CHỦ</a>
+                </li>
+                <li class="nav-bar__item">
+                    <a class="nav-bar__item-link" href="">SẢN PHẨM</a>
+                    <div class="nav-bar__dropdown-icon">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+
+                    <!-- sub-nav của sản phẩm -->
+                    <ul class="sub-nav__list">
+                        <li class="sub-nav__item">
+                            <a href="xe50cc.html">Xe 50cc</a>
+                        </li>
+                        <li class="sub-nav__item">
+                            <a href="xeso.html">Xe số</a>
+                        </li>
+                        <li class="sub-nav__item">
+                            <a href="xetayga.html">Tay ga</a>
+                        </li>
+                        <li class="sub-nav__item">
+                            <a href="xemoto.html">Motor</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-bar__item">
+                    <a class="nav-bar__item-link" href="gioithieu.html">GIỚI THIỆU</a>
+                </li>
+                <li class="nav-bar__item">
+                    <a class="nav-bar__item-link" href="">HÃNG XE</a>
+                    <div class="nav-bar__dropdown-icon">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+
+                    <!-- sub-nav của hãng xe -->
+                    <ul class="sub-nav__list">
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/honda.jpg" alt="">
+                            <a href="">Honda</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/yamaha.jpg" alt="">
+                            <a href="">Yamaha</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/sym.jpg" alt="">
+                            <a href="">SYM</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/kawasaki.jpg" alt="">
+                            <a href="">Kawasaki</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/piaggio.jpg" alt="">
+                            <a href="">Piaggio</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/ducati.jpg" alt="">
+                            <a href="">Ducati</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/bmw.jpg" alt="">
+                            <a href="">BMW</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/daelim.jpg" alt="">
+                            <a href="">Daelim</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/benelli.jpg" alt="">
+                            <a href="">Benelli</a>
+                        </li>
+                        <li class="sub-nav__item sub-nav__item--has-img">
+                            <img src="./assets/image/motor-brand/suzuki.jpg" alt="">
+                            <a href="">Suzuki</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- phần bên phải bao gồm đăng nhập, đăng kí và search box -->
+            <div class="header-right">
+
+                <ul class="login-box">
+                    <li class="login">Đăng nhập</li>
+                    <li class="signup">Đăng ký</li>
+
+                    <!-- form đăng ký -->
+                    <div class="signup-form-wrap">
+                        <div class="form">
+                            <div class="form__header">
+                                <div class="form__header-title">
+                                    <h1>Đăng ký</h1>
+                                </div>
+                                <div class="close">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="form__main">
+                                <div class="user">
+                                    <div class="user-label">Tên tài khoản</div>
+                                    <input type="text" class="user-input" id="user-input" placeholder="Tên tài khoản chứa ít nhất 3 ký tự" onblur="checkUser()">
+                                    <span class="user-error" id="user-error"></span>
+                                </div>
+
+                                <div class="pwd">
+                                    <div class="pwd-label">Mật khẩu</div>
+                                    <input type="password" class="pwd-input" id="pwd-input" placeholder="Mật khẩu chứa ít nhất 6 ký tự" onblur="checkPwd()">
+                                    <span class="pwd-error" id="pwd-error"></span>
+                                </div>
+                
+                                <div class="repwd">
+                                    <div class="repwd-label">Nhập lại mật khẩu</div>
+                                    <input type="password" class="repwd-input" id="repwd-input" minlength="6" placeholder="Nhập lại mật khẩu" onblur="checkRepwd()">
+                                    <span class="repwd-error" id="repwd-error"></span>
+                                </div>
+                           </div>
+                
+                            <div class="form__footer">
+                                <div class="switch-login-form">Đã có tài khoản?</div>
+                                <div class="footer__btn">
+                                    <button class="btn-cancel">Hủy</button>
+                                    <button class="btn-ok">Đăng ký</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- form đăng nhập -->
+                    <div class="login-form-wrap">
+                        <div class="form">
+                            <div class="form__header">
+                                <div class="form__header-title">
+                                    <h1>Đăng nhập</h1>
+                                </div>
+                                <div class="close">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="form__main">
+                                <div class="user">
+                                    <div class="user-label">Tên tài khoản</div>
+                                    <input type="text" class="user-input" id="user-input" placeholder="Tài khoản" onblur="checkUser()">
+                                    <span class="user-error" id="user-error"></span>
+                                </div>
+
+                                <div class="pwd">
+                                    <div class="pwd-label">Mật khẩu</div>
+                                    <input type="password" class="pwd-input" id="pwd-input" placeholder="Mật khẩu" onblur="checkPwd()">
+                                    <span class="pwd-error" id="pwd-error"></span>
+                                </div>
+                           </div>
+                
+                            <div class="form__footer">
+                                <div class="switch-signup-form">Chưa có tài khoản?</div>
+                                <div class="footer__btn">
+                                    <button class="btn-cancel">Hủy</button>
+                                    <button class="btn-ok">Đăng nhập</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </ul>
+
+                <!-- phần tìm kiếm -->
+                <div class="search-box">
+                    <input class="search-box__input" type="text" placeholder="Tìm kiếm...">
+                    <a href="" class="search-btn">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </a>
+
+                    <ul class="search-history__list">
+                        <li class="search-history__item">
+                            <span class="search-history__item-link">suzuki xl7</span>
+                            <ion-icon class="search-history__item-close" name="close-outline"></ion-icon>
+                        </li>
+                        <li class="search-history__item">
+                            <span class="search-history__item-link">bmw s1000rr</span>
+                            <ion-icon class="search-history__item-close" name="close-outline"></ion-icon>
+                        </li>
+                        <li class="search-history__item">
+                            <span class="search-history__item-link">yamaha yzf-r6</span>
+                            <ion-icon class="search-history__item-close" name="close-outline"></ion-icon>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main -->
+    <main>
+        <img src="./assets/image/slide/image1.jpg" alt="" class="banner">
+            <div id="motor_type">
+                <h4 class="ct_type">Loại xe</h4>
+                <br>
+                <ul class="menu">
+                    <li class="menu_motor_type">
+                        <a href="./xetayga.html"><img class="type" src="./assets/image/motor-type/scooter.jpg" alt=""></a>
+                        <br>
+                        <a href="./xetayga.html" class="ct_name">Xe tay ga</a>
+                    </li>
+                    <li class="menu_motor_type">
+                        <a href="./xeso.html"><img src="./assets/image/motor-type/bike.jpg" alt="" class="type"></a>
+                        <br>
+                        <a href="./xeso.html" class="ct_name">Xe số</a>
+                    </li>
+                    <li class="menu_motor_type">
+                        <a href="./xemoto.html"><img src="./assets/image/motor-type/sport_bike.jpg" alt="" class="type"></a>
+                        <br>
+                        <a href="./xemoto.html" class="ct_name">Xe motor</a>
+                    </li>
+                    <li class="menu_motor_type">
+                        <a href="./xe50cc.html"><img src="./assets/image/motor-type/50cc_bike.jpg" alt="" class="type"></a>
+                        <br>
+                        <a href="./xe50cc.html" class="ct_name">Xe 50cc</a>
+                    </li>
+                    <li class="menu_motor_type">
+                        <a href="./xecontay.html"><img src="./assets/image/motor-type/motorbike.jpg" alt="" class="type"></a>
+                        <br>
+                        <a href="./xecontay.html" class="ct_name">Xe côn tay</a>
+                    </li>
+                </ul>
+                <h3 class="ct_list">Xe số</h3>
+                <div id="list_container">
+                    <ul class="motor_list">
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/Hình xemay/Daelim1.png" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">XE MÁY HONDA FUTURE 125 FI <br> <center>VÀNH ĐÚC</center></a>
+                            <p class="price">31.390.000 VNĐ</p>
+                        </li>
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/Hình xemay/Honda2.png" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">XE SỐ HONDA FUTURE 125 FI <br><center>VÀNH NAN HOA</center></a>
+                            <p class="price">25.700.000 VNĐ</p>
+                        </li>
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/Hình xemay/YAMAHA4.png" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">EXCITER 155 VVA PHIÊN BẢN GP</a>
+                            <p class="price">50.790.000 VNĐ</p>
+                        </li>
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/Hình xemay/YAMAHA5.png" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">JUPITER FI PHIÊN BẢN <br> <center>TIÊU CHUẨN</center></a>
+                            <p class="price">29.100.000 VNĐ</p>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="motor_list">
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/Hình xemay/SYM2.jpg" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">XE MÁY NEW GALAXY 125</a>
+                            <p class="price">26.500.000 VNĐ</p>
+                        </li>       
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/Hình xemay/SYM1.jpg" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">XE MÁY ELEGANT 110+ <br><center> YÊN RỜI</center></a>
+                            <p class="price">17.300.000 VNĐ</p>
+                        </li>
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/Hình xemay/SYM8.jpg" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">XE MÁY SYM ANGELA 50</a>
+                            <p class="price">16.800.000 VNĐ</p>
+                        </li>
+                        <li class="product">
+                            <a href="#"><img src="./assets/image/hinhxemay/SYM6.jpg" alt="" class="sample"></a>
+                            <br>
+                            <a href="#" class="motor_name">XE MÁY SYM STAR SR 170</a>
+                            <p class="price">52.400.000 VNĐ</p>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <div id="next_btn">
+                    <a href="#" class="desc_show_more">Xem thêm sản phẩm
+                        <ion-icon class="dropdown-icon" name="chevron-down-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__column-2-4">
+                    <h3 class="footer__heading">Thông Tin Liên Hệ</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                
+                            <p>Địa chỉ: Số 12 Nguyễn Văn Bảo, Phường 4,
+                                Quận Gò Vấp, Thành phố Hồ Chí Minh</p>
+                        </li>
+                        <li class="footer-item"> 
+                            <p>
+                            Điện thoại:
+                            <a href="" class="footer-item__link">0283.8940 390</a> 
+                            </p>
+                        </li>
+                        <li class="footer-item">
+                            <p>
+                            Email:<a href="" class="footer-item__link">motosale@gmail.com</a>
+                            </p>  
+                        
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <h3 class="footer__heading">Giới thiệu</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Giới thiệu về MotoSale</a>
+                        </li>
+                        <li class="footer-item">  
+                            <a href="" class="footer-item__link">Tuyển dụng</a> 
+                        </li>
+                        <li class="footer-item">  
+                            <a href="" class="footer-item__link">Điều khoản</a>
+                        
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <h3 class="footer__heading">Theo Dõi Chung Tôi Trên</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fa-brands fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="footer-item">  
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fa-brands fa-instagram"></i>
+                                Instagram
+                            </a> 
+                        </li>
+                        <li class="footer-item">  
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fa-brands fa-linkedin"></i>
+                                Linked
+                            </a>
+                        
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid__column-2-4">
+                    <h3 class="footer__heading">Hỗ Trợ Khách Hàng</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Trung Tâm Trợ Giúp</a>
+                        </li>
+                        <li class="footer-item">  
+                            <a href="" class="footer-item__link">Hướng Dẫn Trả Góp</a> 
+                        </li>
+                        <li class="footer-item">  
+                            <a href="" class="footer-item__link">Chính Sách Bảo Hành</a>
+                        
+                        </li>
+                        <div class="footer__logo">
+                            <img src="./assets/image/anhBoCongThuong/logoSaleNoti.png" alt="Bộ Công Thương" class="logo_BoCT">
+                           
+                    </ul>
+                </div>
+               
+            </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="grid">
+                    <p class="footer__text">© 2022 - Bản quyền thuộc về Công ty MotoSale VietNam</p>
+                </div>
+
+            </div>
+        
+    </footer>
+</body>
+</html>

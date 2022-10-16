@@ -1,0 +1,799 @@
+body {
+    margin: 0;
+}
+
+:root {
+    --primary-color: #C74B50;
+    --primary-color-2: #890F0D;
+    --nav-text-color: #ddd;
+    --text-color: #333;
+    --line-color-white: rgba(255, 255, 255, .2);
+    --line-color-black: rgba(0, 0, 0, .2);
+    --primary-color-trans: rgba(204, 0, 0, .1);
+    --border-ios-1: rgb(180, 180, 180);
+    --border-ios-2: rgb(240, 240, 240);
+    --transparent: rgba(255, 255, 255, .9);
+    --black-transparent: rgba(0, 0, 0, .5);
+}
+
+/* 
+dùng cho animation
+cách dùng: 
+    animation: growth time style;
+ví dụ: 
+    animation: growth .2s ease;
+*/
+@keyframes growth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    transition: all ease .2s;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* css cho phần header */
+.header-box {
+    background-image: linear-gradient(-45deg, var(--primary-color), var(--primary-color-2));
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 15px 0 #333;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+
+/* phần navigation bar, bao gồm: trang chủ, sản phẩm, giới thiệu, hãng xe */
+.nav-bar__list {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-bar__item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-bar__item:hover .sub-nav__list {
+    display: block;
+}
+
+.nav-bar__dropdown-icon {
+    position: absolute;
+    right: 0;
+    color: var(--nav-text-color);
+    font-size: 16px;
+    transition: all ease .3s;
+}
+
+.nav-bar__item:hover .nav-bar__dropdown-icon {
+    transform: rotate(-90deg);
+    color: white;
+}
+
+/* sub-navigation của sản phẩm và hãng xe */
+.sub-nav__list {
+    position: absolute;
+    top: 12px;
+    left: 110%;
+    min-width: 160px;
+    background-color: white;
+    box-shadow:
+        1px 1px 1px 0 var(--border-ios-2) inset,
+        1px 1px 1px 0 var(--border-ios-1),
+        0px 0px 1px 0 var(--border-ios-1);
+    border-radius: 10px;
+    padding: 8px 0;
+    z-index: 1;
+    display: none;
+    transform-origin: left calc(0% + 20px);
+    animation: growth .2s ease-in-out;
+}
+
+.sub-nav__list::before {
+    content: "";
+    display: block;
+    border-width: 12px 6px 12px 0;
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+    position: absolute;
+    left: -6px;
+    top: 16px;
+}
+
+.sub-nav__list::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    left: -20px;
+    top: 0;
+}
+
+.sub-nav__item--has-img {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.sub-nav__item--has-img img {
+    position: absolute;
+    margin-left: 20px;
+    height: 20px;
+}
+
+.sub-nav__item a {
+    width: 100%;
+    height: 36px;
+    color: var(--primary-color);
+    padding: 8px 0 8px 20px;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sub-nav__item--has-img a {
+    padding-left:52px;
+}
+
+.sub-nav__item:hover,
+.sub-nav__item img:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-trans);
+}
+
+.nav-bar__item-link {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 900;
+    position: relative;
+}
+
+.nav-bar__item:hover .nav-bar__item-link {
+    color: white;
+}
+
+.nav-bar__item-link::after,
+.nav-bar__item-link::before {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 0px;
+    bottom: 0;
+    background-color: white;
+    transition: all .2s ease-in-out;
+}
+
+.nav-bar__item-link::after {
+    left: 50%;
+}
+
+.nav-bar__item-link::before {
+    right: 50%;
+}
+
+.nav-bar__item:hover .nav-bar__item-link::after,
+.nav-bar__item:hover .nav-bar__item-link::before {
+    width: 50%;
+}
+
+/* phần header bên phải, bao gồm đăng nhập, đăng ký và phần tìm kiếm */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 200px;
+    margin-right: 20px;
+    height: 100%;
+}
+
+/* chứa phần đăng nhập và đăng ký */
+.login-box {
+    display: flex;
+    margin: 4px 0 0 0;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.login, .signup {
+    text-decoration: none;
+    color: var(--nav-text-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login {
+    padding-right: 8px;
+}
+
+.signup {
+    padding-left: 8px;
+    border-left: 1px solid var(--line-color-white);
+}
+
+.login:hover, .signup:hover {
+    color: white;
+}
+
+/* phần form đăng nhập và đăng ký */
+.signup-form-wrap, .login-form-wrap {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--black-transparent);
+    z-index: 3;
+    display: none;
+}
+
+.form {
+    background-color: white;
+    width: 600px;
+    border-radius: 10px;
+    padding: 36px;
+    margin: 10% auto auto;
+    animation: growth .55s ease-in-out;
+}
+
+.form__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__header-title h1 {
+    color: var(--primary-color-2);
+    margin: 0;
+    cursor: default;
+}
+
+.close {
+    font-size: 40px;
+    height: 40px;
+}
+
+.form__main {
+    margin: 0 20px;
+}
+
+.form__main span {
+    font-size: 12px;
+    color: var(--primary-color);
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+}
+
+.user, .pwd, .repwd {
+    position: relative;
+}
+
+.user-label, .pwd-label, .repwd-label {
+    color: #333;
+    margin: 20px 0 4px;
+}
+
+.user-input, .pwd-input, .repwd-input {
+    border-radius: 5px;
+    width: 100%;
+    height: 36px;
+    border: 1px solid #333;
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 20px 0;
+}
+
+.switch-signup-form, .switch-login-form {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color-2);
+}
+
+.footer_btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-cancel, .btn-ok {
+    min-width: 100px;
+    border-radius: 5px;
+    height: 36px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-cancel {
+    border: 1px solid #333;
+}
+
+.btn-ok {
+    border: none;
+    color: white;
+    background-color: var(--primary-color-2);
+    margin-left: 20px;
+}
+
+.close:hover {
+    color: var(--primary-color-2);
+    cursor: pointer;
+}
+
+.switch-signup-form:hover, .switch-login-form:hover, .btn-cancel:hover, .btn-ok:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* phần tìm kiếm */
+.search-box {
+    border: none;
+    border-radius: 5px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    position: relative;
+}
+
+.search-box__input {
+    width: 0px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    transition: all .55s ease-in-out;
+}
+
+.search-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 26px;
+    color: #666;
+}
+
+.search-btn:hover {
+    color: var(--primary-color-2);
+}
+
+.search-box:hover .search-box__input {
+    width: 300px;
+    padding: 0 15px 0 12px;
+}
+
+.search-box__input:active, .search-box__input:focus {
+    width: 300px;
+    padding: 0 15px 0 12px;
+}
+
+.search-box__input:focus ~ .search-history__list {
+    display: block;
+}
+
+.search-history__list {
+    position: absolute;
+    width: 100%;
+    top: 105%;
+    background-color: white;
+    padding: 8px 0;
+    border-radius: 5px;
+    transform-origin: 50% 0;
+    animation: growth .1s ease;
+    display: none;
+    box-shadow:
+        1px 1px 1px 0 var(--border-ios-2) inset,
+        1px 1px 1px 0 var(--border-ios-1),
+        0px 0px 1px 0 var(--border-ios-1);
+}
+
+.search-history__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 100%;
+}
+
+.search-history__item-link {
+    padding: 8px 0 8px 12px;
+    color: #333;
+    flex: 1;
+}
+
+.search-history__item-link:hover {
+    color: #C74B50;
+    cursor: pointer;
+}
+
+.search-history__item-close {
+    padding: 8px 12px 8px 12px;
+}
+
+.search-history__item-close:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* main */
+main {
+    margin-top: 80px;
+}
+/* cái banner ở phần main */
+.banner {
+    width: 100%;
+}
+/* Phần main */
+/* Phần danh mục các loại xe */
+#motor_type {
+    background-color: #fff;
+    width: 1000px;
+    margin: 0px auto;
+    box-shadow: 0 0 10px #8888;
+    border: 1px solid #f5f5f5;
+}
+
+.ct_type {
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu .menu_motor_type {
+    padding: 0 40px;
+    float: left;
+}
+
+.type {
+    width: 118px;
+    height: 70px;
+    border: 1px solid #333;
+}
+
+.type:hover {
+    opacity: 0.8;
+}
+
+.ct_name {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    margin-left: 40px;
+}
+
+/* Danh sách xe */
+.ct_list {
+    margin-top: 40px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.list_container {
+    padding: 0 12px;
+}
+
+.motor_list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.product:hover {
+    border: 1px solid var(--primary-color);
+}
+
+.product {
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.product a:first-child { /* img wrap */
+    height: 180px;
+    display: block;
+}
+
+.sample { /* img */
+    width: 200px;
+    max-width: 200px;
+}
+
+.motor_name {
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    display: block;
+    max-width: 200px;
+    text-align: center;
+    margin: 20px 0 0;
+    max-height: 40px;
+    text-overflow: ellipsis;
+}
+
+.price {
+    font-size: 12px;
+    text-align: center;
+    margin: 12px 0;
+    max-height: 40px;
+    text-overflow: ellipsis;
+}
+
+/* Click vào button này thì hiện tiếp các sản phẩm tiếp theo */
+#next_btn {
+    width: 100%;
+}
+.desc_show_more {
+    display: block;
+    width: 300px;
+    margin: 12px auto 40px;
+    padding: 7px 0;
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+    background: var(--primary-color);
+    border: 1px solid #e1e1e1;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+.desc_show_more:hover {
+    opacity: .8;
+}
+
+.dropdown-icon {
+    position: absolute;
+    top: 11px;
+    width: 12px;
+    height: 12px;
+}
+
+
+/* Footer */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/*Test*/
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 25%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5%;
+    padding-right: 0;
+    width: 25%;
+}
+.footer {
+    padding-top: 16px;
+    border-top: 4px solid #fB9086;
+    background-color: #f3f3f3;
+}
+
+.footer__heading {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.footer-list {
+    padding-left: 0;
+    list-style: none; /*Bỏ dấu chấm danh sách*/
+}
+
+.footer-item__link {
+    text-decoration: none; /*Bỏ gạch chân*/
+    font-size: 18px;
+    color: #212121;
+    padding: 2px 0;
+    display: block;
+    display: flex;
+    align-items: center;
+}
+
+.footer-item__link:hover {
+    color: #c00;
+}
+
+.footer-item__icon {
+    font-size: 1.6rem;
+    margin: -1px 8px 0 0;
+}
+
+.logo_BoCT {
+    height: 65px
+}
+
+.footer_-bottom {
+    padding: 18px 0;
+    background-color: #f5f5f5;
+    margin-top: 36px;
+}
+
+.footer__text {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/*Giới thiệu*/
+/* main */
+#intro {
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 1px 2px 3px Indigo;
+}
+#information {
+    margin: 20px 100px;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 32px;
+}
+#website-sample {
+    margin-left: 20%;
+    border: 1px solid #333;
+    box-shadow: 5px 10px grey;
+    margin-bottom: 50px;
+}
+#website-sample:hover {
+    opacity: 0.7;
+}
+#web_name {
+    text-align: center;
+    font-weight: 300;
+}
+
+/* Chi tiết sản phẩm */
+.breadcrumbs {
+    padding: 20px 0 12px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumbs ul {
+    display: flex;
+}
+
+.breadcrumbs ul li::after {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    content: "\203A";
+}
+
+.breadcrumbs ul li:last-child:after {
+    display: none;
+}
+
+.breadcrumbs ul li a:hover {
+    color: var(--primary-color);
+}
+
+.bike-title {
+    margin: 12px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.bike-main {
+    display: flex;
+}
+
+.bike-img {
+    width: 30%;
+    max-height: 300px;
+    margin: 0 20px;
+}
+
+.bike-detail {
+    width: 70%;
+}
+
+.bike-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.bike-detail__table {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.bike-detail__table tr td {
+    padding: 6px 0;
+}
+
+.bike-detail__table tr td:nth-child(odd) {
+    font-weight: 700;
+}
+
+.buynow {
+    border: none;
+    margin: 20px 60px 0 0;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.buynow:hover {
+    cursor: pointer;
+    opacity: .8;
+}
